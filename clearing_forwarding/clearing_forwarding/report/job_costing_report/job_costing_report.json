@@ -1,0 +1,21 @@
+{
+ "doctype": "Report",
+ "name": "Job Costing Report",
+ "report_name": "Job Costing Report",
+ "ref_doctype": "Job Cost Entry",
+ "report_type": "Script Report",
+ "module": "Clearing Forwarding",
+ "is_standard": "Yes",
+ "disabled": 0,
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "C&F Manager"
+  },
+  {
+   "role": "Accounts User"
+  }
+ ]
+}

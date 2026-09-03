@@ -1,0 +1,134 @@
+{
+ "doctype": "DocType",
+ "name": "Vessel",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "vessel_name",
+  "imo_number",
+  "vessel_type",
+  "column_break_1",
+  "flag",
+  "shipping_line",
+  "section_break_1",
+  "voyage_number",
+  "column_break_2",
+  "eta",
+  "etd"
+ ],
+ "fields": [
+  {
+   "fieldname": "vessel_name",
+   "label": "Vessel Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "imo_number",
+   "label": "IMO Number",
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "vessel_type",
+   "label": "Vessel Type",
+   "fieldtype": "Select",
+   "options": "\nContainer Ship\nBulk Carrier\nTanker\nGeneral Cargo\nRo-Ro\nOther"
+  },
+  {
+   "fieldname": "column_break_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "flag",
+   "label": "Flag",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "shipping_line",
+   "label": "Shipping Line",
+   "fieldtype": "Link",
+   "options": "Shipping Line",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "voyage_number",
+   "label": "Voyage Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "eta",
+   "label": "ETA",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "etd",
+   "label": "ETD",
+   "fieldtype": "Datetime"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Forwarding Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1
+  },
+  {
+   "role": "Operations User",
+   "read": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "autoname": "field:vessel_name"
+}

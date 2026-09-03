@@ -1,0 +1,315 @@
+{
+ "doctype": "DocType",
+ "name": "Customs Declaration",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 1,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "job",
+  "customer",
+  "column_break_1",
+  "import_export",
+  "declaration_number",
+  "section_break_1",
+  "customs_station",
+  "entry_number",
+  "column_break_2",
+  "declaration_date",
+  "section_break_values",
+  "customs_value",
+  "cif_value",
+  "fob_value",
+  "column_break_3",
+  "freight",
+  "insurance",
+  "currency",
+  "section_break_taxes",
+  "duty",
+  "vat",
+  "excise",
+  "column_break_4",
+  "idf",
+  "rdl",
+  "other_taxes",
+  "section_break_5",
+  "total_taxes",
+  "section_break_payment",
+  "payment_reference",
+  "column_break_5",
+  "payment_date",
+  "section_break_status",
+  "assessment_status",
+  "clearance_status",
+  "column_break_6",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "job",
+   "label": "Job",
+   "fieldtype": "Link",
+   "options": "Clearing and Forwarding Job",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer",
+   "fetch_from": "job.customer",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "import_export",
+   "label": "Import / Export",
+   "fieldtype": "Select",
+   "options": "Import\nExport"
+  },
+  {
+   "fieldname": "declaration_number",
+   "label": "Declaration Number",
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customs_station",
+   "label": "Customs Station",
+   "fieldtype": "Link",
+   "options": "Government Agency",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "entry_number",
+   "label": "Entry Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "declaration_date",
+   "label": "Declaration Date",
+   "fieldtype": "Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_values",
+   "label": "Values",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customs_value",
+   "label": "Customs Value",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "cif_value",
+   "label": "CIF Value",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "fob_value",
+   "label": "FOB Value",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "freight",
+   "label": "Freight",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "insurance",
+   "label": "Insurance",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "currency",
+   "label": "Currency",
+   "fieldtype": "Link",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_taxes",
+   "label": "Taxes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "duty",
+   "label": "Duty",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "vat",
+   "label": "VAT",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "excise",
+   "label": "Excise Duty",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_4",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "idf",
+   "label": "IDF",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "rdl",
+   "label": "RDL",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "other_taxes",
+   "label": "Other Taxes",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "section_break_5",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_taxes",
+   "label": "Total Taxes",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_payment",
+   "label": "Payment",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_reference",
+   "label": "Payment Reference",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_5",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_date",
+   "label": "Payment Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "section_break_status",
+   "label": "Status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "assessment_status",
+   "label": "Assessment Status",
+   "fieldtype": "Select",
+   "options": "\nPending\nAssessed"
+  },
+  {
+   "fieldname": "clearance_status",
+   "label": "Clearance Status",
+   "fieldtype": "Select",
+   "options": "\nPending\nReleased"
+  },
+  {
+   "fieldname": "column_break_6",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Draft\nSubmitted\nAssessed\nPayment Pending\nPaid\nCustoms Released\nClosed",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1,
+   "submit": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "autoname": "format:CD-{job}-{#####}"
+}

@@ -1,0 +1,17 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.txt
+recursive-include clearing_forwarding *.css
+recursive-include clearing_forwarding *.csv
+recursive-include clearing_forwarding *.html
+recursive-include clearing_forwarding *.ico
+recursive-include clearing_forwarding *.js
+recursive-include clearing_forwarding *.json
+recursive-include clearing_forwarding *.md
+recursive-include clearing_forwarding *.png
+recursive-include clearing_forwarding *.py
+recursive-include clearing_forwarding *.svg
+recursive-include clearing_forwarding *.txt
+recursive-exclude clearing_forwarding *.pyc

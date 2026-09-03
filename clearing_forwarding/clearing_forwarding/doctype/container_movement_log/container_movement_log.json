@@ -1,0 +1,156 @@
+{
+ "doctype": "DocType",
+ "name": "Container Movement Log",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "container",
+  "date_time",
+  "column_break_1",
+  "previous_location",
+  "new_location",
+  "section_break_1",
+  "status",
+  "column_break_2",
+  "vehicle",
+  "driver",
+  "section_break_2",
+  "reference",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "container",
+   "label": "Container",
+   "fieldtype": "Link",
+   "options": "Container",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "date_time",
+   "label": "Date/Time",
+   "fieldtype": "Datetime",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "previous_location",
+   "label": "Previous Location",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "new_location",
+   "label": "New Location",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Booked\nEmpty\nStuffing\nLoaded\nAt Port\nDischarged\nCustoms Hold\nReleased\nGate Out\nIn Transit\nDelivered\nEmpty Returned",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle",
+   "label": "Vehicle",
+   "fieldtype": "Link",
+   "options": "Vehicle",
+   "description": "Links to transport_logistics' Vehicle doctype - confirm exact doctype/field name before Phase 4"
+  },
+  {
+   "fieldname": "driver",
+   "label": "Driver",
+   "fieldtype": "Link",
+   "options": "Driver",
+   "description": "Links to transport_logistics' Driver doctype - confirm exact doctype/field name before Phase 4"
+  },
+  {
+   "fieldname": "section_break_2",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference",
+   "label": "Reference",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "remarks",
+   "label": "Remarks",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Forwarding Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Operations User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "autoname": "hash"
+}

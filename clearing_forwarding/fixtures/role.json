@@ -1,0 +1,42 @@
+[
+ {
+  "doctype": "Role",
+  "name": "C&F Manager",
+  "role_name": "C&F Manager",
+  "desk_access": 1,
+  "disabled": 0,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Clearing Officer",
+  "role_name": "Clearing Officer",
+  "desk_access": 1,
+  "disabled": 0,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Forwarding Officer",
+  "role_name": "Forwarding Officer",
+  "desk_access": 1,
+  "disabled": 0,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Documentation Officer",
+  "role_name": "Documentation Officer",
+  "desk_access": 1,
+  "disabled": 0,
+  "is_custom": 1
+ },
+ {
+  "doctype": "Role",
+  "name": "Operations User",
+  "role_name": "Operations User",
+  "desk_access": 1,
+  "disabled": 0,
+  "is_custom": 1
+ }
+]

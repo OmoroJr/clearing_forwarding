@@ -1,0 +1,214 @@
+{
+ "doctype": "DocType",
+ "name": "Demurrage And Detention",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "container",
+  "job",
+  "shipping_line",
+  "section_break_freetime",
+  "free_days",
+  "free_time_start",
+  "column_break_1",
+  "free_time_end",
+  "section_break_actuals",
+  "actual_release_date",
+  "actual_return_date",
+  "column_break_2",
+  "days_overdue",
+  "section_break_charges",
+  "daily_rate",
+  "total_charge",
+  "column_break_3",
+  "customer_charge",
+  "supplier_charge",
+  "section_break_status",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "container",
+   "label": "Container",
+   "fieldtype": "Link",
+   "options": "Container",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "job",
+   "label": "Job",
+   "fieldtype": "Link",
+   "options": "Clearing and Forwarding Job",
+   "fetch_from": "container.job",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "shipping_line",
+   "label": "Shipping Line",
+   "fieldtype": "Link",
+   "options": "Shipping Line",
+   "fetch_from": "container.shipping_line",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_freetime",
+   "label": "Free Time",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "free_days",
+   "label": "Free Days",
+   "fieldtype": "Int",
+   "reqd": 1
+  },
+  {
+   "fieldname": "free_time_start",
+   "label": "Free Time Start",
+   "fieldtype": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "free_time_end",
+   "label": "Free Time End",
+   "fieldtype": "Date",
+   "read_only": 1,
+   "description": "Auto-calculated: Free Time Start + Free Days"
+  },
+  {
+   "fieldname": "section_break_actuals",
+   "label": "Actuals",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "actual_release_date",
+   "label": "Actual Release Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "actual_return_date",
+   "label": "Actual Return Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "column_break_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days_overdue",
+   "label": "Days Overdue",
+   "fieldtype": "Int",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_charges",
+   "label": "Charges",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "daily_rate",
+   "label": "Daily Rate",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "total_charge",
+   "label": "Total Charge",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_charge",
+   "label": "Customer Charge",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "supplier_charge",
+   "label": "Supplier Charge",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "section_break_status",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Within Free Time\nNearing Expiry\nOverdue\nCleared",
+   "default": "Within Free Time",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Forwarding Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Accounts User",
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": []
+}

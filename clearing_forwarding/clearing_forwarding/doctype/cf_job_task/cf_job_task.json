@@ -1,0 +1,74 @@
+{
+ "doctype": "DocType",
+ "name": "CF Job Task",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 1,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_type",
+  "assigned_to",
+  "priority",
+  "due_date",
+  "completed_date",
+  "status",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_type",
+   "label": "Task Type",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "assigned_to",
+   "label": "Assigned To",
+   "fieldtype": "Link",
+   "options": "User",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "priority",
+   "label": "Priority",
+   "fieldtype": "Select",
+   "options": "Low\nMedium\nHigh",
+   "default": "Medium",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "due_date",
+   "label": "Due Date",
+   "fieldtype": "Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "completed_date",
+   "label": "Completed Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Open\nIn Progress\nCompleted\nCancelled",
+   "default": "Open",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "remarks",
+   "label": "Remarks",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "permissions": [],
+ "links": [],
+ "actions": [],
+ "states": []
+}

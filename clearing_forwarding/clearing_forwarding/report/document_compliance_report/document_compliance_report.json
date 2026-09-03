@@ -1,0 +1,24 @@
+{
+ "doctype": "Report",
+ "name": "Document Compliance Report",
+ "report_name": "Document Compliance Report",
+ "ref_doctype": "Clearing and Forwarding Job",
+ "report_type": "Script Report",
+ "module": "Clearing Forwarding",
+ "is_standard": "Yes",
+ "disabled": 0,
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "C&F Manager"
+  },
+  {
+   "role": "Clearing Officer"
+  },
+  {
+   "role": "Documentation Officer"
+  }
+ ]
+}

@@ -1,0 +1,160 @@
+{
+ "doctype": "DocType",
+ "name": "Government Agency",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "agency_name",
+  "agency_code",
+  "agency_type",
+  "column_break_1",
+  "contact_person",
+  "phone",
+  "email",
+  "section_break_1",
+  "office_station",
+  "jurisdiction",
+  "section_break_2",
+  "permit_types",
+  "section_break_3",
+  "active"
+ ],
+ "fields": [
+  {
+   "fieldname": "agency_name",
+   "label": "Agency Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "agency_code",
+   "label": "Agency Code",
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "agency_type",
+   "label": "Agency Type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "options": "\nCustoms / Revenue Authority\nStandards Body\nPhytosanitary / Plant Health\nPort Authority\nMaritime Authority\nWeights & Measures\nImmigration\nAnti-Narcotics\nRadiation Protection\nOther"
+  },
+  {
+   "fieldname": "column_break_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "label": "Contact Person",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "phone",
+   "label": "Phone",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "email",
+   "label": "Email",
+   "fieldtype": "Data",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_break_1",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "office_station",
+   "label": "Office / Station",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "jurisdiction",
+   "label": "Jurisdiction",
+   "fieldtype": "Data",
+   "description": "e.g. a specific port or border point this office covers"
+  },
+  {
+   "fieldname": "section_break_2",
+   "label": "Permit Types Issued",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "permit_types",
+   "label": "Permit Types Issued",
+   "fieldtype": "Table",
+   "options": "CF Agency Permit Type"
+  },
+  {
+   "fieldname": "section_break_3",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "active",
+   "label": "Active",
+   "fieldtype": "Check",
+   "default": "1",
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Forwarding Officer",
+   "read": 1
+  },
+  {
+   "role": "Documentation Officer",
+   "read": 1
+  },
+  {
+   "role": "Operations User",
+   "read": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "autoname": "field:agency_name"
+}

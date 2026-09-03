@@ -1,0 +1,218 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_clearing_customer",
+  "dt": "Customer",
+  "fieldname": "cf_clearing_customer",
+  "label": "Clearing Customer",
+  "fieldtype": "Check",
+  "insert_after": "customer_type",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_shipping_customer",
+  "dt": "Customer",
+  "fieldname": "cf_shipping_customer",
+  "label": "Shipping Customer",
+  "fieldtype": "Check",
+  "insert_after": "cf_clearing_customer",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_consignee",
+  "dt": "Customer",
+  "fieldname": "cf_consignee",
+  "label": "Consignee",
+  "fieldtype": "Check",
+  "insert_after": "cf_shipping_customer",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_consignor",
+  "dt": "Customer",
+  "fieldname": "cf_consignor",
+  "label": "Consignor",
+  "fieldtype": "Check",
+  "insert_after": "cf_consignee",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_preferred_port",
+  "dt": "Customer",
+  "fieldname": "cf_preferred_port",
+  "label": "Preferred Port",
+  "fieldtype": "Link",
+  "insert_after": "cf_consignor",
+  "owner": "Administrator",
+  "options": "Port"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_preferred_shipping_line",
+  "dt": "Customer",
+  "fieldname": "cf_preferred_shipping_line",
+  "label": "Preferred Shipping Line",
+  "fieldtype": "Link",
+  "insert_after": "cf_preferred_port",
+  "owner": "Administrator",
+  "options": "Shipping Line"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_customs_code",
+  "dt": "Customer",
+  "fieldname": "cf_customs_code",
+  "label": "Customs Code",
+  "fieldtype": "Data",
+  "insert_after": "cf_preferred_shipping_line",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_importer_code",
+  "dt": "Customer",
+  "fieldname": "cf_importer_code",
+  "label": "Importer Code",
+  "fieldtype": "Data",
+  "insert_after": "cf_customs_code",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Customer-cf_exporter_code",
+  "dt": "Customer",
+  "fieldname": "cf_exporter_code",
+  "label": "Exporter Code",
+  "fieldtype": "Data",
+  "insert_after": "cf_importer_code",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-cf_transporter_type",
+  "dt": "Supplier",
+  "fieldname": "cf_transporter_type",
+  "label": "Transporter Type",
+  "fieldtype": "Select",
+  "insert_after": "supplier_type",
+  "owner": "Administrator",
+  "options": "\nOwn Fleet\nSub-Contracted\nAgent"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-cf_fleet_size",
+  "dt": "Supplier",
+  "fieldname": "cf_fleet_size",
+  "label": "Fleet Size",
+  "fieldtype": "Int",
+  "insert_after": "cf_transporter_type",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-cf_rate_agreement",
+  "dt": "Supplier",
+  "fieldname": "cf_rate_agreement",
+  "label": "Rate Agreement",
+  "fieldtype": "Small Text",
+  "insert_after": "cf_fleet_size",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-cf_compliance_status",
+  "dt": "Supplier",
+  "fieldname": "cf_compliance_status",
+  "label": "Compliance Status",
+  "fieldtype": "Select",
+  "insert_after": "cf_rate_agreement",
+  "owner": "Administrator",
+  "options": "\nCompliant\nPending\nNon-Compliant"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Supplier-cf_insurance_expiry",
+  "dt": "Supplier",
+  "fieldname": "cf_insurance_expiry",
+  "label": "Insurance Expiry",
+  "fieldtype": "Date",
+  "insert_after": "cf_compliance_status",
+  "owner": "Administrator"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Truck Trip-cf_job",
+  "dt": "Truck Trip",
+  "fieldname": "cf_job",
+  "label": "C&F Job",
+  "fieldtype": "Link",
+  "insert_after": "vehicle",
+  "owner": "Administrator",
+  "options": "Clearing and Forwarding Job",
+  "in_list_view": 1,
+  "in_standard_filter": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cf_job",
+  "dt": "Purchase Invoice",
+  "fieldname": "cf_job",
+  "label": "C&F Job",
+  "fieldtype": "Link",
+  "insert_after": "supplier",
+  "owner": "Administrator",
+  "options": "Clearing and Forwarding Job",
+  "in_list_view": 1,
+  "in_standard_filter": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cf_container",
+  "dt": "Purchase Invoice",
+  "fieldname": "cf_container",
+  "label": "C&F Container",
+  "fieldtype": "Link",
+  "insert_after": "cf_job",
+  "owner": "Administrator",
+  "options": "Container"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Purchase Invoice-cf_cost_type",
+  "dt": "Purchase Invoice",
+  "fieldname": "cf_cost_type",
+  "label": "C&F Cost Type",
+  "fieldtype": "Select",
+  "insert_after": "cf_container",
+  "owner": "Administrator",
+  "options": "\nCustoms Duty\nPort Charges\nShipping Line Charges\nFreight\nTransport\nFuel\nHandling\nStorage\nDemurrage\nDetention\nDocumentation\nClearing Agent\nInspection\nWarehousing\nMiscellaneous"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cf_job",
+  "dt": "Sales Invoice",
+  "fieldname": "cf_job",
+  "label": "C&F Job",
+  "fieldtype": "Link",
+  "insert_after": "customer",
+  "owner": "Administrator",
+  "options": "Clearing and Forwarding Job",
+  "in_list_view": 1,
+  "in_standard_filter": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Sales Invoice-cf_container",
+  "dt": "Sales Invoice",
+  "fieldname": "cf_container",
+  "label": "C&F Container",
+  "fieldtype": "Link",
+  "insert_after": "cf_job",
+  "owner": "Administrator",
+  "options": "Container"
+ }
+]

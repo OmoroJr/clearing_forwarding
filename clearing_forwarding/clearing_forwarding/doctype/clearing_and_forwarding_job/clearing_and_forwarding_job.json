@@ -1,0 +1,860 @@
+{
+ "doctype": "DocType",
+ "name": "Clearing and Forwarding Job",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 1,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_type",
+  "job_category",
+  "column_break_ident_1",
+  "customer",
+  "customer_reference",
+  "column_break_ident_2",
+  "sales_order",
+  "quotation",
+  "section_break_ident_1",
+  "account_manager",
+  "job_owner",
+  "column_break_ident_3",
+  "branch",
+  "company",
+  "section_break_status",
+  "status",
+  "section_break_shipment",
+  "import_export",
+  "mode_of_transport",
+  "load_type",
+  "column_break_ship_1",
+  "consolidation_type",
+  "shipment_type",
+  "incoterms",
+  "section_break_ship_2",
+  "origin",
+  "destination",
+  "column_break_ship_2",
+  "port_of_loading",
+  "port_of_discharge",
+  "column_break_ship_3",
+  "final_destination",
+  "warehouse",
+  "section_break_cargo",
+  "cargo_description",
+  "column_break_cargo_1",
+  "number_of_packages",
+  "package_type",
+  "section_break_cargo_2",
+  "gross_weight",
+  "net_weight",
+  "column_break_cargo_2",
+  "volume",
+  "cbm",
+  "section_break_cargo_3",
+  "container_count",
+  "container_type",
+  "column_break_cargo_3",
+  "hs_codes",
+  "dangerous_goods",
+  "section_break_cargo_4",
+  "cargo_value",
+  "currency",
+  "section_break_parties",
+  "consignor",
+  "consignee",
+  "notify_party",
+  "column_break_parties_1",
+  "shipping_line",
+  "clearing_agent",
+  "column_break_parties_2",
+  "transporter",
+  "freight_forwarder",
+  "section_break_shipinfo",
+  "booking_number",
+  "bill_of_lading_number",
+  "column_break_shipinfo_1",
+  "house_bl_number",
+  "master_bl_number",
+  "column_break_shipinfo_2",
+  "airway_bill_number",
+  "section_break_shipinfo_2",
+  "container_number",
+  "seal_number",
+  "column_break_shipinfo_3",
+  "vessel",
+  "voyage_number",
+  "section_break_shipinfo_3",
+  "eta",
+  "etd",
+  "column_break_shipinfo_4",
+  "actual_arrival_date",
+  "delivery_date",
+  "section_break_regulatory",
+  "customs_declaration",
+  "customs_status",
+  "section_break_regulatory_2",
+  "agency_clearances",
+  "section_break_financial",
+  "estimated_revenue",
+  "estimated_cost",
+  "column_break_fin_1",
+  "expected_profit",
+  "margin_percent",
+  "section_break_financial_actual",
+  "actual_revenue",
+  "actual_cost",
+  "column_break_fin_2",
+  "gross_profit",
+  "actual_margin_percent",
+  "section_break_financial_variance",
+  "cost_variance",
+  "revenue_variance",
+  "column_break_fin_3",
+  "billed_amount",
+  "outstanding_amount",
+  "payment_status",
+  "section_break_transport",
+  "transport_trip",
+  "transport_status",
+  "section_break_tasks",
+  "tasks",
+  "section_break_documents",
+  "documents"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_type",
+   "label": "Job Type",
+   "fieldtype": "Select",
+   "reqd": 1,
+   "in_list_view": 1,
+   "options": "Import Clearing\nExport Clearing\nFreight Forwarding\nAir Cargo\nSea Cargo\nRoad Cargo\nTransit Cargo"
+  },
+  {
+   "fieldname": "job_category",
+   "label": "Job Category",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_ident_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "label": "Customer",
+   "fieldtype": "Link",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_reference",
+   "label": "Customer Reference",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_ident_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "label": "Sales Order",
+   "fieldtype": "Link",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "quotation",
+   "label": "Quotation",
+   "fieldtype": "Link",
+   "options": "Quotation"
+  },
+  {
+   "fieldname": "section_break_ident_1",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "account_manager",
+   "label": "Account Manager",
+   "fieldtype": "Link",
+   "options": "User"
+  },
+  {
+   "fieldname": "job_owner",
+   "label": "Job Owner",
+   "fieldtype": "Link",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_ident_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "label": "Branch",
+   "fieldtype": "Link",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "company",
+   "label": "Company",
+   "fieldtype": "Link",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_status",
+   "label": "Status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Draft\nQuoted\nJob Open\nDocumentation Pending\nDocuments Complete\nCustoms Processing\nCustoms Assessment\nDuty Pending\nDuty Paid\nCustoms Released\nPort Processing\nCargo Released\nTransport Scheduled\nIn Transit\nDelivered\nBilling Pending\nBilled\nPayment Pending\nCompleted\nCancelled",
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_shipment",
+   "label": "Shipment",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "import_export",
+   "label": "Import / Export",
+   "fieldtype": "Select",
+   "options": "Import\nExport",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "label": "Mode of Transport",
+   "fieldtype": "Select",
+   "options": "Sea\nAir\nRoad\nRail"
+  },
+  {
+   "fieldname": "load_type",
+   "label": "Load Type",
+   "fieldtype": "Select",
+   "options": "\nFCL\nLCL\nBreak Bulk"
+  },
+  {
+   "fieldname": "column_break_ship_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "consolidation_type",
+   "label": "Consolidation Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "shipment_type",
+   "label": "Shipment Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "incoterms",
+   "label": "Incoterms",
+   "fieldtype": "Select",
+   "options": "\nEXW\nFCA\nFAS\nFOB\nCFR\nCIF\nCPT\nCIP\nDAP\nDPU\nDDP"
+  },
+  {
+   "fieldname": "section_break_ship_2",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "origin",
+   "label": "Origin",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "destination",
+   "label": "Destination",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_ship_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_of_loading",
+   "label": "Port of Loading",
+   "fieldtype": "Link",
+   "options": "Port"
+  },
+  {
+   "fieldname": "port_of_discharge",
+   "label": "Port of Discharge",
+   "fieldtype": "Link",
+   "options": "Port"
+  },
+  {
+   "fieldname": "column_break_ship_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "final_destination",
+   "label": "Final Destination",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "warehouse",
+   "label": "Warehouse",
+   "fieldtype": "Link",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "section_break_cargo",
+   "label": "Cargo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cargo_description",
+   "label": "Cargo Description",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "column_break_cargo_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_of_packages",
+   "label": "Number of Packages",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "package_type",
+   "label": "Package Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_cargo_2",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gross_weight",
+   "label": "Gross Weight (kg)",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "net_weight",
+   "label": "Net Weight (kg)",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "column_break_cargo_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "volume",
+   "label": "Volume",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "cbm",
+   "label": "CBM",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "section_break_cargo_3",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "container_count",
+   "label": "Container Count",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "container_type",
+   "label": "Container Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_cargo_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hs_codes",
+   "label": "HS Codes",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "dangerous_goods",
+   "label": "Dangerous Goods",
+   "fieldtype": "Check"
+  },
+  {
+   "fieldname": "section_break_cargo_4",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cargo_value",
+   "label": "Cargo Value",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "currency",
+   "label": "Currency",
+   "fieldtype": "Link",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_parties",
+   "label": "Parties",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "consignor",
+   "label": "Consignor",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "consignee",
+   "label": "Consignee",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "notify_party",
+   "label": "Notify Party",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_parties_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_line",
+   "label": "Shipping Line",
+   "fieldtype": "Link",
+   "options": "Shipping Line"
+  },
+  {
+   "fieldname": "clearing_agent",
+   "label": "Clearing Agent",
+   "fieldtype": "Link",
+   "options": "Clearing Agent"
+  },
+  {
+   "fieldname": "column_break_parties_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transporter",
+   "label": "Transporter",
+   "fieldtype": "Link",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "freight_forwarder",
+   "label": "Freight Forwarder",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_shipinfo",
+   "label": "Shipping Information",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "booking_number",
+   "label": "Booking Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "bill_of_lading_number",
+   "label": "Bill of Lading Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_shipinfo_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "house_bl_number",
+   "label": "House BL Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "master_bl_number",
+   "label": "Master BL Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_shipinfo_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "airway_bill_number",
+   "label": "Airway Bill Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_shipinfo_2",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "container_number",
+   "label": "Container Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "seal_number",
+   "label": "Seal Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_shipinfo_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel",
+   "label": "Vessel",
+   "fieldtype": "Link",
+   "options": "Vessel"
+  },
+  {
+   "fieldname": "voyage_number",
+   "label": "Voyage Number",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_shipinfo_3",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "eta",
+   "label": "ETA",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "etd",
+   "label": "ETD",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "column_break_shipinfo_4",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "actual_arrival_date",
+   "label": "Actual Arrival Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "delivery_date",
+   "label": "Delivery Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "section_break_regulatory",
+   "label": "Regulatory Clearance",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customs_declaration",
+   "label": "Customs Declaration",
+   "fieldtype": "Link",
+   "options": "Customs Declaration"
+  },
+  {
+   "fieldname": "customs_status",
+   "label": "Customs Status",
+   "fieldtype": "Select",
+   "options": "\nSubmitted\nAssessed\nPayment Pending\nPaid\nCustoms Released\nClosed",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Mirrors the linked Customs Declaration's status"
+  },
+  {
+   "fieldname": "section_break_regulatory_2",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "agency_clearances",
+   "label": "Agency Clearances",
+   "fieldtype": "Table",
+   "options": "CF Job Agency Clearance"
+  },
+  {
+   "fieldname": "section_break_financial",
+   "label": "Financial (Estimates)",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "estimated_revenue",
+   "label": "Estimated Revenue",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "estimated_cost",
+   "label": "Estimated Cost",
+   "fieldtype": "Currency",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_fin_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_profit",
+   "label": "Expected Profit",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "margin_percent",
+   "label": "Margin %",
+   "fieldtype": "Percent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_financial_actual",
+   "label": "Financial (Actuals)",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "actual_revenue",
+   "label": "Actual Revenue",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_cost",
+   "label": "Actual Cost",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_fin_2",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gross_profit",
+   "label": "Gross Profit",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_margin_percent",
+   "label": "Actual Margin %",
+   "fieldtype": "Percent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_financial_variance",
+   "label": "",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cost_variance",
+   "label": "Cost Variance",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1,
+   "description": "Actual Cost - Estimated Cost"
+  },
+  {
+   "fieldname": "revenue_variance",
+   "label": "Revenue Variance",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1,
+   "description": "Actual Revenue - Estimated Revenue"
+  },
+  {
+   "fieldname": "column_break_fin_3",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "billed_amount",
+   "label": "Billed Amount",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "label": "Outstanding Amount",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "label": "Payment Status",
+   "fieldtype": "Select",
+   "options": "Not Billed\nBilled\nPartially Paid\nPaid",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "section_break_transport",
+   "label": "Transport",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "transport_trip",
+   "label": "Transport Trip",
+   "fieldtype": "Link",
+   "options": "Truck Trip",
+   "description": "Links to transport_logistics' Truck Trip - see utils/transport_integration.py for assumptions made about that app's schema"
+  },
+  {
+   "fieldname": "transport_status",
+   "label": "Transport Status",
+   "fieldtype": "Data",
+   "read_only": 1,
+   "description": "Synced automatically from the linked Truck Trip"
+  },
+  {
+   "fieldname": "section_break_tasks",
+   "label": "Tasks",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tasks",
+   "label": "Tasks",
+   "fieldtype": "Table",
+   "options": "CF Job Task"
+  },
+  {
+   "fieldname": "section_break_documents",
+   "label": "Documents",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "documents",
+   "label": "Documents",
+   "fieldtype": "Table",
+   "options": "CF Job Document"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1
+  },
+  {
+   "role": "Forwarding Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1
+  },
+  {
+   "role": "Documentation Officer",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Operations User",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Customs Declaration",
+   "link_fieldname": "job",
+   "group": "Customs"
+  },
+  {
+   "link_doctype": "Container",
+   "link_fieldname": "job",
+   "group": "Containers"
+  },
+  {
+   "link_doctype": "Shipment Incident",
+   "link_fieldname": "job",
+   "group": "Incidents"
+  },
+  {
+   "link_doctype": "Truck Trip",
+   "link_fieldname": "cf_job",
+   "group": "Transport"
+  },
+  {
+   "link_doctype": "Job Cost Entry",
+   "link_fieldname": "job",
+   "group": "Finance"
+  },
+  {
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "cf_job",
+   "group": "Finance"
+  },
+  {
+   "link_doctype": "Purchase Invoice",
+   "link_fieldname": "cf_job",
+   "group": "Finance"
+  }
+ ],
+ "actions": [],
+ "states": []
+}

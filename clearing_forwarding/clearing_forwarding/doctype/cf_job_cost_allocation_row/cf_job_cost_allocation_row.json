@@ -1,0 +1,47 @@
+{
+ "doctype": "DocType",
+ "name": "CF Job Cost Allocation Row",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 1,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "job",
+  "share_basis",
+  "allocated_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "job",
+   "label": "Job",
+   "fieldtype": "Link",
+   "options": "Clearing and Forwarding Job",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "share_basis",
+   "label": "Share Basis",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "description": "Weight/Volume/Container-Based: auto-filled from the Job. Manual: enter the amount directly."
+  },
+  {
+   "fieldname": "allocated_amount",
+   "label": "Allocated Amount",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [],
+ "links": [],
+ "actions": [],
+ "states": []
+}

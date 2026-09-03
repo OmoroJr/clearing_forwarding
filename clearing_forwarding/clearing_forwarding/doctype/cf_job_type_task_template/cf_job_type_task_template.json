@@ -1,0 +1,53 @@
+{
+ "doctype": "DocType",
+ "name": "CF Job Type Task Template",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 1,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_type",
+  "task_type",
+  "default_priority",
+  "default_days_to_complete"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_type",
+   "label": "Job Type",
+   "fieldtype": "Select",
+   "reqd": 1,
+   "in_list_view": 1,
+   "options": "Import Clearing\nExport Clearing\nFreight Forwarding\nAir Cargo\nSea Cargo\nRoad Cargo\nTransit Cargo"
+  },
+  {
+   "fieldname": "task_type",
+   "label": "Task Type",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "default_priority",
+   "label": "Default Priority",
+   "fieldtype": "Select",
+   "options": "Low\nMedium\nHigh",
+   "default": "Medium"
+  },
+  {
+   "fieldname": "default_days_to_complete",
+   "label": "Default Days To Complete",
+   "fieldtype": "Int",
+   "description": "Used to compute Due Date from Job creation date"
+  }
+ ],
+ "permissions": [],
+ "links": [],
+ "actions": [],
+ "states": []
+}

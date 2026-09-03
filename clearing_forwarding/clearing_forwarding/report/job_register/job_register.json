@@ -1,0 +1,27 @@
+{
+ "doctype": "Report",
+ "name": "Job Register",
+ "report_name": "Job Register",
+ "ref_doctype": "Clearing and Forwarding Job",
+ "report_type": "Script Report",
+ "module": "Clearing Forwarding",
+ "is_standard": "Yes",
+ "disabled": 0,
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "C&F Manager"
+  },
+  {
+   "role": "Clearing Officer"
+  },
+  {
+   "role": "Forwarding Officer"
+  },
+  {
+   "role": "Accounts User"
+  }
+ ]
+}

@@ -1,0 +1,114 @@
+[
+ {
+  "doctype": "Kanban Board",
+  "name": "C&F Operations Board",
+  "kanban_board_name": "C&F Operations Board",
+  "reference_doctype": "Clearing and Forwarding Job",
+  "field_name": "status",
+  "filters": "[]",
+  "show_labels": 0,
+  "private": 0,
+  "columns": [
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Draft",
+    "indicator": "gray"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Quoted",
+    "indicator": "blue"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Job Open",
+    "indicator": "orange"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Documentation Pending",
+    "indicator": "purple"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Documents Complete",
+    "indicator": "yellow"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Customs Processing",
+    "indicator": "pink"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Customs Assessment",
+    "indicator": "green"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Duty Pending",
+    "indicator": "red"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Duty Paid",
+    "indicator": "gray"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Customs Released",
+    "indicator": "blue"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Port Processing",
+    "indicator": "orange"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Cargo Released",
+    "indicator": "purple"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Transport Scheduled",
+    "indicator": "yellow"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "In Transit",
+    "indicator": "pink"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Delivered",
+    "indicator": "green"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Billing Pending",
+    "indicator": "red"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Billed",
+    "indicator": "gray"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Payment Pending",
+    "indicator": "blue"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Completed",
+    "indicator": "orange"
+   },
+   {
+    "doctype": "Kanban Board Column",
+    "column_name": "Cancelled",
+    "indicator": "purple"
+   }
+  ]
+ }
+]

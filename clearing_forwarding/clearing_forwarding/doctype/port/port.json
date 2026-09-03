@@ -1,0 +1,113 @@
+{
+ "doctype": "DocType",
+ "name": "Port",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "port_name",
+  "un_locode",
+  "country",
+  "column_break_1",
+  "port_type",
+  "customs_station",
+  "active"
+ ],
+ "fields": [
+  {
+   "fieldname": "port_name",
+   "label": "Port Name",
+   "fieldtype": "Data",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "un_locode",
+   "label": "UN/LOCODE",
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "country",
+   "label": "Country",
+   "fieldtype": "Link",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_1",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "port_type",
+   "label": "Port Type",
+   "fieldtype": "Select",
+   "options": "Sea Port\nAir Port\nDry Port / ICD\nBorder Point",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customs_station",
+   "label": "Customs Station",
+   "fieldtype": "Check",
+   "default": "0"
+  },
+  {
+   "fieldname": "active",
+   "label": "Active",
+   "fieldtype": "Check",
+   "default": "1",
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "C&F Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "Forwarding Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Clearing Officer",
+   "read": 1
+  },
+  {
+   "role": "Operations User",
+   "read": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "autoname": "field:port_name"
+}

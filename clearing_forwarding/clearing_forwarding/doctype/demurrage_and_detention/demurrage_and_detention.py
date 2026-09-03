@@ -73,4 +73,4 @@ def check_demurrage_alerts():
 
 def _notify(row, message):
 	subject = f"{message} - Container {row.container} (Job {row.job})"
-	notify_role("C&F Manager", subject, reference_doctype="Demurrage And Detention", reference_name=row.name)
+	notify_role("CF Manager", subject, reference_doctype="Demurrage And Detention", reference_name=row.name)

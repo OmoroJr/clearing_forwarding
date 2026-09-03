@@ -1,8 +1,8 @@
 {
  "doctype": "Workspace",
  "name": "Clearing Forwarding",
- "label": "Clearing & Forwarding",
- "title": "Clearing & Forwarding",
+ "label": "Clearing and Forwarding",
+ "title": "Clearing and Forwarding",
  "module": "Clearing Forwarding",
  "icon": "non-profit",
  "public": 1,
@@ -12,7 +12,7 @@
  "for_user": "",
  "parent_page": "",
  "restrict_to_domain": "",
- "content": "[{\"id\": \"header-cf\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Clearing &amp; Forwarding</b></span>\", \"col\": 12}}, {\"id\": \"shortcut-clearing-and-forwarding-job\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Clearing and Forwarding Job\", \"col\": 3}}, {\"id\": \"shortcut-customs-declaration\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customs Declaration\", \"col\": 3}}, {\"id\": \"shortcut-container\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Container\", \"col\": 3}}, {\"id\": \"shortcut-demurrage-and-detention\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Demurrage And Detention\", \"col\": 3}}, {\"id\": \"shortcut-shipment-incident\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shipment Incident\", \"col\": 3}}, {\"id\": \"shortcut-job-cost-entry\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Job Cost Entry\", \"col\": 3}}, {\"id\": \"shortcut-job-cost-allocation\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Job Cost Allocation\", \"col\": 3}}, {\"id\": \"shortcut-government-agency\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Government Agency\", \"col\": 3}}, {\"id\": \"shortcut-shipping-line\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shipping Line\", \"col\": 3}}, {\"id\": \"shortcut-vessel\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vessel\", \"col\": 3}}, {\"id\": \"shortcut-port\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Port\", \"col\": 3}}, {\"id\": \"shortcut-clearing-agent\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Clearing Agent\", \"col\": 3}}, {\"id\": \"shortcut-cf-settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CF Settings\", \"col\": 3}}]",
+ "content": "[{\"id\": \"header-cf\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Clearing and Forwarding</b></span>\", \"col\": 12}}, {\"id\": \"shortcut-clearing-and-forwarding-job\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Clearing and Forwarding Job\", \"col\": 3}}, {\"id\": \"shortcut-customs-declaration\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customs Declaration\", \"col\": 3}}, {\"id\": \"shortcut-container\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Container\", \"col\": 3}}, {\"id\": \"shortcut-demurrage-and-detention\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Demurrage And Detention\", \"col\": 3}}, {\"id\": \"shortcut-shipment-incident\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shipment Incident\", \"col\": 3}}, {\"id\": \"shortcut-job-cost-entry\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Job Cost Entry\", \"col\": 3}}, {\"id\": \"shortcut-job-cost-allocation\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Job Cost Allocation\", \"col\": 3}}, {\"id\": \"shortcut-government-agency\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Government Agency\", \"col\": 3}}, {\"id\": \"shortcut-shipping-line\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Shipping Line\", \"col\": 3}}, {\"id\": \"shortcut-vessel\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Vessel\", \"col\": 3}}, {\"id\": \"shortcut-port\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Port\", \"col\": 3}}, {\"id\": \"shortcut-clearing-agent\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Clearing Agent\", \"col\": 3}}, {\"id\": \"shortcut-cf-settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CF Settings\", \"col\": 3}}, {\"id\": \"shortcut-cf-integration-settings\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CF Integration Settings\", \"col\": 3}}]",
  "charts": [],
  "number_cards": [],
  "quick_lists": [],
@@ -95,6 +95,12 @@
    "doctype": "Workspace Shortcut",
    "label": "CF Settings",
    "link_to": "CF Settings",
+   "type": "DocType"
+  },
+  {
+   "doctype": "Workspace Shortcut",
+   "label": "CF Integration Settings",
+   "link_to": "CF Integration Settings",
    "type": "DocType"
   }
  ]

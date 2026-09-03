@@ -1,0 +1,36 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container" style="max-width: 640px; margin-top: 2rem; margin-bottom: 3rem;">
+	<h2>Track Your Shipment</h2>
+	<form method="get" class="form-inline" style="margin-bottom: 1.5rem;">
+		<input type="text" name="q" class="form-control" style="width: 70%; margin-right: 0.5rem;"
+			placeholder="Job Number, Container Number, or BL Number" value="{{ query or '' }}">
+		<button type="submit" class="btn btn-primary">Track</button>
+	</form>
+
+	{% if not_found %}
+	<div class="alert alert-warning">No shipment found matching "{{ query }}".</div>
+	{% endif %}
+
+	{% if result %}
+	<div class="card" style="padding: 1.5rem;">
+		<h4>Job: {{ result.name }}</h4>
+		<p><strong>Current Status:</strong> {{ result.status }}</p>
+		{% if result.eta %}<p><strong>ETA:</strong> {{ result.eta }}</p>{% endif %}
+		{% if result.delivery_date %}<p><strong>Delivered:</strong> {{ result.delivery_date }}</p>{% endif %}
+
+		<div style="margin-top: 1.5rem;">
+			{% for stage in stages %}
+			<div style="display: inline-block; text-align: center; width: {{ 100 // stages|length }}%;">
+				<div style="width: 20px; height: 20px; border-radius: 50%; margin: 0 auto;
+					background-color: {{ '#2e7d32' if loop.index0 <= current_stage_index else '#ccc' }};">
+				</div>
+				<div style="font-size: 0.8rem; margin-top: 0.3rem;">{{ stage }}</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}

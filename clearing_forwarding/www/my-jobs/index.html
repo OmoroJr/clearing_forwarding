@@ -1,0 +1,42 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container" style="margin-top: 2rem; margin-bottom: 3rem;">
+	<h2>My Jobs</h2>
+
+	{% if no_customer_linked %}
+	<div class="alert alert-info">
+		Your account isn't linked to a Customer record yet - contact us to get portal access set up.
+	</div>
+	{% elif not jobs %}
+	<p>No jobs found.</p>
+	{% else %}
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Job</th>
+				<th>Type</th>
+				<th>Status</th>
+				<th>ETA</th>
+				<th>Delivered</th>
+				<th>Billed</th>
+				<th>Outstanding</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for job in jobs %}
+			<tr>
+				<td><a href="/track?q={{ job.name }}">{{ job.name }}</a></td>
+				<td>{{ job.job_type or "" }}</td>
+				<td>{{ job.status }}</td>
+				<td>{{ job.eta or "" }}</td>
+				<td>{{ job.delivery_date or "" }}</td>
+				<td>{{ job.billed_amount or 0 }}</td>
+				<td>{{ job.outstanding_amount or 0 }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% endif %}
+</div>
+{% endblock %}

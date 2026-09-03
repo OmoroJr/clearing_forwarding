@@ -8,7 +8,7 @@ class ShipmentIncident(Document):
 	def after_insert(self):
 		if self.severity in ("High", "Critical"):
 			notify_role(
-				"C&F Manager",
+				"CF Manager",
 				f"{self.severity} severity incident on Job {self.job}: {self.incident_type}",
 				reference_doctype=self.doctype,
 				reference_name=self.name,

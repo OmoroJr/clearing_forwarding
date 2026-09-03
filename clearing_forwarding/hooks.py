@@ -11,7 +11,7 @@ required_apps = ["erpnext"]
 # Fixtures ------------------------------------------------------------------
 fixtures = [
 	{"dt": "Role", "filters": [["name", "in", [
-		"C&F Manager",
+		"CF Manager",
 		"Clearing Officer",
 		"Forwarding Officer",
 		"Documentation Officer",
@@ -39,7 +39,7 @@ fixtures = [
 		"Sales Invoice-cf_job",
 		"Sales Invoice-cf_container",
 	]]]},
-	{"dt": "Kanban Board", "filters": [["name", "=", "C&F Operations Board"]]},
+	{"dt": "Kanban Board", "filters": [["name", "=", "CF Operations Board"]]},
 ]
 
 # Document events -------------------------------------------------------------

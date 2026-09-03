@@ -1,0 +1,198 @@
+{
+ "doctype": "DocType",
+ "name": "CF Integration Settings",
+ "module": "Clearing Forwarding",
+ "custom": 0,
+ "istable": 0,
+ "is_submittable": 0,
+ "editable_grid": 1,
+ "track_changes": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_sms",
+  "sms_provider",
+  "sms_sender_id",
+  "column_break_sms",
+  "sms_api_key",
+  "sms_api_secret",
+  "section_break_whatsapp",
+  "whatsapp_provider",
+  "whatsapp_phone_number_id",
+  "column_break_whatsapp",
+  "whatsapp_api_token",
+  "section_break_mpesa",
+  "mpesa_environment",
+  "mpesa_shortcode",
+  "column_break_mpesa",
+  "mpesa_consumer_key",
+  "mpesa_consumer_secret",
+  "mpesa_passkey",
+  "section_break_gps",
+  "gps_provider",
+  "column_break_gps",
+  "gps_api_key",
+  "section_break_customs",
+  "customs_api_endpoint",
+  "column_break_customs",
+  "customs_api_key"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_sms",
+   "label": "SMS",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sms_provider",
+   "label": "SMS Provider",
+   "fieldtype": "Select",
+   "options": "\nAfricasTalking\nTwilio\nOther"
+  },
+  {
+   "fieldname": "sms_sender_id",
+   "label": "Sender ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_sms",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sms_api_key",
+   "label": "API Key",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "sms_api_secret",
+   "label": "API Secret",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "section_break_whatsapp",
+   "label": "WhatsApp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "whatsapp_provider",
+   "label": "WhatsApp Provider",
+   "fieldtype": "Select",
+   "options": "\nTwilio\nMeta Cloud API\nOther"
+  },
+  {
+   "fieldname": "whatsapp_phone_number_id",
+   "label": "Phone Number ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_whatsapp",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whatsapp_api_token",
+   "label": "API Token",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "section_break_mpesa",
+   "label": "M-Pesa (Daraja)",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mpesa_environment",
+   "label": "Environment",
+   "fieldtype": "Select",
+   "options": "\nSandbox\nProduction"
+  },
+  {
+   "fieldname": "mpesa_shortcode",
+   "label": "Shortcode",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_mpesa",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mpesa_consumer_key",
+   "label": "Consumer Key",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "mpesa_consumer_secret",
+   "label": "Consumer Secret",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "mpesa_passkey",
+   "label": "Passkey",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "section_break_gps",
+   "label": "GPS Tracking",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gps_provider",
+   "label": "GPS Provider",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_gps",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gps_api_key",
+   "label": "API Key",
+   "fieldtype": "Password"
+  },
+  {
+   "fieldname": "section_break_customs",
+   "label": "Customs / Port API",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customs_api_endpoint",
+   "label": "API Endpoint",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_customs",
+   "label": "",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customs_api_key",
+   "label": "API Key",
+   "fieldtype": "Password"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "print": 1,
+   "email": 1
+  },
+  {
+   "role": "CF Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "print": 1,
+   "email": 1
+  }
+ ],
+ "links": [],
+ "actions": [],
+ "states": [],
+ "issingle": 1
+}

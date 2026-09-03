@@ -232,7 +232,7 @@
    "email": 1
   },
   {
-   "role": "C&F Manager",
+   "role": "CF Manager",
    "read": 1,
    "write": 1,
    "create": 1,

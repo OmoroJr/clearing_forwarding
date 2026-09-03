@@ -1,8 +1,8 @@
 [
  {
   "doctype": "Kanban Board",
-  "name": "C&F Operations Board",
-  "kanban_board_name": "C&F Operations Board",
+  "name": "CF Operations Board",
+  "kanban_board_name": "CF Operations Board",
   "reference_doctype": "Clearing and Forwarding Job",
   "field_name": "status",
   "filters": "[]",

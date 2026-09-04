@@ -7,7 +7,7 @@ from frappe.utils import add_days, nowdate
 from clearing_forwarding.clearing_forwarding.utils.job_finance import check_customer_credit
 
 
-class ClearingForwardingJob(Document):
+class ClearingandForwardingJob(Document):
 	def autoname(self):
 		prefix = get_branch_prefix(self.branch)
 		series_key = f"{prefix}-CF-.YYYY.-.#####" if prefix else "CF-.YYYY.-.#####"

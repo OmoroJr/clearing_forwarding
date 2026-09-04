@@ -19,6 +19,7 @@
   "section_break_1",
   "customs_station",
   "entry_number",
+  "customs_procedure_code",
   "column_break_2",
   "declaration_date",
   "section_break_values",
@@ -100,6 +101,13 @@
    "fieldname": "entry_number",
    "label": "Entry Number",
    "fieldtype": "Data"
+  },
+  {
+   "fieldname": "customs_procedure_code",
+   "label": "Customs Procedure Code (CPC)",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "description": "e.g. 4000, 4071, 3071 - confirm against the current KRA/EAC CPC code list"
   },
   {
    "fieldname": "column_break_2",

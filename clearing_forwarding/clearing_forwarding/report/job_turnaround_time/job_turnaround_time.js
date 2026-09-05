@@ -1,7 +1,7 @@
 // Copyright (c) 2026, Clearing Forwarding and contributors
 // For license information, please see license.txt
 
-frappe.query_reports["Job Profitability Report"] = {
+frappe.query_reports["Job Turnaround Time"] = {
 	"filters": [
 		{
 			fieldname: "company",
@@ -17,12 +17,6 @@ frappe.query_reports["Job Profitability Report"] = {
 			options: "Branch",
 		},
 		{
-			fieldname: "job",
-			label: __("Job"),
-			fieldtype: "Link",
-			options: "Clearing and Forwarding Job",
-		},
-		{
 			fieldname: "customer",
 			label: __("Customer"),
 			fieldtype: "Link",
@@ -35,28 +29,29 @@ frappe.query_reports["Job Profitability Report"] = {
 			options: "\nImport Clearing\nExport Clearing\nFreight Forwarding\nAir Cargo\nSea Cargo\nRoad Cargo\nTransit Cargo",
 		},
 		{
-			fieldname: "status",
-			label: __("Status"),
-			fieldtype: "Select",
-			options: "\nDraft\nQuoted\nJob Open\nDocumentation Pending\nDocuments Complete\nCustoms Processing\nCustoms Assessment\nDuty Pending\nDuty Paid\nCustoms Released\nPort Processing\nCargo Released\nTransport Scheduled\nIn Transit\nDelivered\nBilling Pending\nBilled\nPayment Pending\nCompleted\nCancelled",
-		},
-		{
-			fieldname: "only_submitted",
-			label: __("Only Submitted Jobs"),
+			fieldname: "only_completed",
+			label: __("Only Jobs with a Delivery Date"),
 			fieldtype: "Check",
 			default: 1,
 		},
 		{
 			fieldname: "from_date",
-			label: __("From Date"),
+			label: __("Created From"),
 			fieldtype: "Date",
-			default: frappe.datetime.add_months(frappe.datetime.get_today(), -3),
+			default: frappe.datetime.add_months(frappe.datetime.get_today(), -6),
 		},
 		{
 			fieldname: "to_date",
-			label: __("To Date"),
+			label: __("Created To"),
 			fieldtype: "Date",
 			default: frappe.datetime.get_today(),
 		},
 	],
+	"formatter": function (value, row, column, data, default_formatter) {
+		value = default_formatter(value, row, column, data);
+		if (column.fieldname == "eta_variance_days" && data && data.eta_variance_days > 0) {
+			value = `<span style="color: #c62828; font-weight: 600;">${value}</span>`;
+		}
+		return value;
+	},
 };

@@ -54,13 +54,46 @@ cost/revenue/profit/variance/billing-status recalculation, opt-in
 customer credit-limit check on Job submit (fails open on lookup
 errors).
 
-**Phase 6 - Dashboards & Reporting**: 8 Script Reports (Job Register,
-Job Profitability, Customer Profitability, Job Costing, Demurrage,
-Document Compliance, Outstanding Customer, Unbilled Jobs) with filter
-UIs and native Excel/CSV export; a Kanban Board on Job.status (all 20
-states as columns); 5 Number Cards for an executive-dashboard view
-(not auto-wired into the Workspace's chart blocks - drag them on via
-the UI, a 30-second step).
+**Phase 6 - Dashboards & Reporting**: 14 Script Reports (see
+"Reports" below) with filter UIs, charts, report-summary cards and
+native Excel/CSV export; a Kanban Board on Job.status (all 20 states
+as columns); 5 Number Cards for an executive-dashboard view (not
+auto-wired into the Workspace's chart blocks - drag them on via the
+UI, a 30-second step).
+
+## Reports
+
+All 14 are standard Script Reports under the "Clearing Forwarding"
+module, so they show up under the relevant doctype's "Menu >
+Reports" as well as in the global Report List. The original 8 have
+been rebuilt with proper joins, filters, charts and report-summary
+cards (they previously ran a bare query with no chart, summary, or
+- in two cases - filter UI at all); 6 more were added to cover
+doctypes that had no reporting before.
+
+| Report | Based on | Purpose |
+|---|---|---|
+| Job Register | Clearing and Forwarding Job | Full operational job listing - status, shipping, payment filters |
+| Job Profitability Report | Clearing and Forwarding Job + Job Cost Entry | Per-job revenue/cost, broken out by cost type, with margin and variance |
+| Customer Profitability Report | Clearing and Forwarding Job | Revenue, cost, profit and outstanding aggregated by customer |
+| Job Costing Report | Job Cost Entry | Cost-ledger detail by cost type, supplier, container and job |
+| Demurrage Report | Demurrage And Detention | Free-time, overdue days and charges per container, overdue highlighted |
+| Document Compliance Report | CF Job Document (via Job) | Missing / unverified / expiring / expired documents per job |
+| Outstanding Customer Report | Clearing and Forwarding Job | AR-style view of unpaid job balances by customer, with days-outstanding |
+| Unbilled Jobs Report | Clearing and Forwarding Job | Jobs (optionally Delivered-or-later) with payment_status = Not Billed |
+| Customs Declaration Register *(new)* | Customs Declaration | Declarations with duty/VAT/excise/IDF/RDL breakdown and assessment/clearance status |
+| Container Status Report *(new)* | Container | Live container register - location, weights, lifecycle dates, demurrage status |
+| Agency Clearance Status *(new)* | CF Job Agency Clearance (via Job) | Multi-agency clearance status per job (pending/in progress/cleared/rejected) |
+| Shipment Incident Report *(new)* | Shipment Incident | Incidents by type/severity/status with responsible person |
+| Container Movement Report *(new)* | Container Movement Log | Container location/status history with vehicle and driver |
+| Job Turnaround Time *(new)* | Clearing and Forwarding Job | Creation-to-delivery cycle time, arrival-to-delivery, and ETA accuracy |
+
+Financial reports (Job Profitability, Customer Profitability, Job
+Costing, Outstanding Customer, Unbilled Jobs, Customs Declaration
+Register) are restricted to System Manager / CF Manager / Accounts
+User; the operational reports are also open to the relevant officer
+roles. Nothing in `hooks.py` needed to change - reports register
+automatically on `bench migrate`.
 
 **Phase 7 - Portal & Integrations**:
 - **CF Integration Settings** (single doctype) - credential storage

@@ -1,5 +1,6 @@
 {
  "doctype": "Report",
+ "add_total_row": 0,
  "name": "Job Register",
  "report_name": "Job Register",
  "ref_doctype": "Clearing and Forwarding Job",

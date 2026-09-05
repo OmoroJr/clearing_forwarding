@@ -1,6 +1,7 @@
 {
  "doctype": "Workspace",
  "name": "Clearing Forwarding",
+ "route": "clearing-forwarding",
  "label": "Clearing and Forwarding",
  "title": "Clearing and Forwarding",
  "module": "Clearing Forwarding",

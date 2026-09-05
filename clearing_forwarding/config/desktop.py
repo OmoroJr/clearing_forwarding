@@ -6,7 +6,7 @@ def get_data():
 		{
 			"module_name": "Clearing Forwarding",
 			"category": "Modules",
-			"label": _("Clearing and Forwarding"),
+			"label": _("Clearing Forwarding"),
 			"color": "#2e7d32",
 			"icon": "octicon octicon-package",
 			"type": "module",
